@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <Form />
-      <TeamList />  
+      <Form teamMemberList={teamMemberList} setTeamMemberList={setTeamMemberList} />
+      <TeamList teamMemberList={teamMemberList} setTeamMemberList={setTeamMemberList} />
     </div>
   );
 }
