@@ -1,8 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Form = (props) => {
+const Form = props => {
 
-    const [formIngo, setFormInfo] = useState({
+    const [formInfo, setFormInfo] = useState({
         name: '',
         email: '',
         role: '',
@@ -10,10 +10,15 @@ const Form = (props) => {
     })
 
     useEffect( () => {
-        let id = Math.max(...props.teamMemberList.map( teammem => teamMem.id ))
-        if(id < 0){id = 0;}
-        setFormInfo({...setFormInfo, id})
-    })
+        let id = Math.max(...props.teamMemberList.map( teamMem => teamMem.id ))
+        if(id < 0) {
+            id = 0;
+        }
+        setFormInfo({
+            ...formInfo,
+            id
+        })
+    }, [])
 
     const onChangeHandler = event => {
         event.preventDefault();
@@ -64,7 +69,7 @@ const Form = (props) => {
                 <button type="submit">Add Team Member</button>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default Form.js
+export default Form; 

@@ -67,4 +67,5 @@ const TeamMemberDisplay = props => {
         </tr>
     );
 };
-export default TeamMember.js
+
+export default TeamMemberDisplay; 
